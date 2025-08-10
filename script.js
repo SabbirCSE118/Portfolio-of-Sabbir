@@ -28,3 +28,39 @@ const form = document.getElementById('contactForm');
       messagePara.style.color = "red";
     }
   });
+
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 100;
+
+    if (elementTop < windowHeight - elementVisible) {
+      el.classList.add('active');
+    }
+  });
+});
+
+// Scroll Reveal Animation (already added before)
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 100;
+
+    if (elementTop < windowHeight - elementVisible) {
+      el.classList.add('active');
+    }
+  });
+
+  // Footer fade-in
+  const footer = document.querySelector('.foot');
+  if (footer.getBoundingClientRect().top < window.innerHeight - 50) {
+    footer.classList.add('visible');
+  }
+});
+
