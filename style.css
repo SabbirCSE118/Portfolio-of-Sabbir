@@ -3,6 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+.tittle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1c40f;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #f1c40f, #e9d100);
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+}
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -239,6 +258,96 @@ body {
 .project-grid .project-card:hover {
   transform: translateY(-5px);
 }
+
+/* ===== Smooth Scroll Reveal Animation ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Floating Profile Picture Animation ===== */
+.logo img {
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ===== Glowing Hover for Buttons ===== */
+.btn:hover {
+  background-color: #e1b307;
+  box-shadow: 0px 0px 15px rgba(241, 196, 15, 0.8);
+}
+
+/* ===== Typewriter Animation ===== */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #f1c40f;
+  animation: typing 3s steps(30, end), blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ===== Animated Gradient Background ===== */
+.hero {
+  background: linear-gradient(270deg, #f9f9f9, #fff7d1, #f9f9f9);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Card Hover Tilt Effect ===== */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: rotate3d(1, 1, 0, 5deg) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== Pulsing Skills ===== */
+li {
+  transition: transform 0.3s ease;
+}
+li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(241, 196, 15, 0.6);
+}
+
+/* ===== Footer Fade-in ===== */
+.foot {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.foot.visible {
+  opacity: 1;
+}
+
 
 .foot{
     text-align: center;
